@@ -1,0 +1,22 @@
+[
+{ "name": "admin_ele_blockQueueStatus", "params": [""], "returns": {}},
+{ "name": "admin_ele_setAskPrice", "params": ["", ""], "returns": true },
+{ "name": "admin_ele_setBidPrice", "params": ["", ""], "returns": true },
+{ "name": "admin_ele_setMining", "params": [true, ""], "returns": true },
+{ "name": "admin_ele_findBlock", "params": ["", ""], "returns": {} },
+{ "name": "admin_ele_blockQueueFirstUnknown", "params": [""], "returns": "" },
+{ "name": "admin_ele_blockQueueRetryUnknown", "params": [""], "returns": true },
+{ "name": "admin_ele_allAccounts", "params": [""], "returns": [] },
+{ "name": "admin_ele_newAccount", "params": [{}, ""], "returns": {} },
+{ "name": "admin_ele_setMiningBenefactor", "params": ["", ""], "returns": true },
+{ "name": "admin_ele_inspect", "params": ["", ""], "returns": {} },
+{ "name": "admin_ele_reprocess", "params": ["", ""], "returns": {} },
+{ "name": "admin_ele_vmTrace", "params": ["", 0, ""], "returns": {} },
+{ "name": "admin_ele_getReceiptByHashAndIndex", "params": ["", 0, ""], "returns": {} },
+{ "name": "miner_start", "params": [0], "returns": true },
+{ "name": "miner_stop", "params": [], "returns": true },
+{ "name": "miner_setElementbase", "params": [""], "returns": true },
+{ "name": "miner_setExtra", "params": [""], "returns": true },
+{ "name": "miner_setGasPrice", "params": [""], "returns": true },
+{ "name": "miner_hashrate", "params": [], "returns": "" }
+]

@@ -1,0 +1,4 @@
+[
+	{ "name": "ele_getWork", "params": [], "order": [], "returns": []},
+	{ "name": "ele_submitWork", "params": ["", "", ""], "order": [], "returns": true}
+]

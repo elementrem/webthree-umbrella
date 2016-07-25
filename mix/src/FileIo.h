@@ -1,0 +1,104 @@
+/*
+	This file is part of cpp-elementrem.
+
+	cpp-elementrem is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	cpp-elementrem is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with cpp-elementrem.  If not, see <http://www.gnu.org/licenses/>.
+*/
+/** @file FileIo.h
+ * 
+ * 
+ * Elementrem IDE client.
+ */
+
+#pragma once
+
+#include <QFileSystemModel>
+#include <json/json.h>
+#include <libdevcore/CommonData.h>
+#include <QObject>
+
+class QFileSystemWatcher;
+
+namespace dev
+{
+namespace mix
+{
+
+///File services for QML
+class FileIo: public QObject
+{
+	Q_OBJECT
+	Q_PROPERTY(QString homePath READ getHomePath CONSTANT)
+
+signals:
+	/// Signalled in case of IO error
+	void error(QString const& _errorText);
+	/// Signnalled when a file is changed.
+	void fileChanged(QString const& _filePath);
+	/// Internal error during processing file
+	void fileIOInternalError(QString const& _error);
+
+public:
+	FileIo();
+	/// Create a directory if it does not exist. Signals on failure.
+	Q_INVOKABLE bool makeDir(QString const& _url);
+	/// Read file contents to a string. Signals on failure.
+	Q_INVOKABLE QString readFile(QString const& _url);
+	/// Returns file size
+	Q_INVOKABLE int getFileSize(QString const& _url);
+	/// Write contents to a file. Signals on failure.
+	Q_INVOKABLE void writeFile(QString const& _url, QString const& _data);
+	/// Copy a file from _sourcePath to _destPath. Signals on failure.
+	Q_INVOKABLE void copyFile(QString const& _sourceUrl, QString const& _destUrl);
+	/// Move (rename) a file from _sourcePath to _destPath. Signals on failure.
+	Q_INVOKABLE void moveFile(QString const& _sourceUrl, QString const& _destUrl);
+	/// Check if file exists
+	Q_INVOKABLE bool fileExists(QString const& _url);
+	/// Compress a folder, @returns sha3 of the compressed file.
+	Q_INVOKABLE QStringList makePackage(QString const& _deploymentFolder);
+	/// Open a file browser.
+	Q_INVOKABLE void openFileBrowser(QString const& _dir);
+	/// Listen for files change in @arg _path.
+	Q_INVOKABLE void watchFileChanged(QString const& _path);
+	/// Stop Listenning for files change in @arg _path.
+	Q_INVOKABLE void stopWatching(QString const& _path);
+	/// Delete a file
+	Q_INVOKABLE void deleteFile(QString const& _path);
+	/// delete a directory
+	Q_INVOKABLE void deleteDir(QString const& _url);
+	/// retrieve all sub files
+	Q_INVOKABLE QVariantList files(QString const& _root);
+	/// retrieve all sub dir
+	Q_INVOKABLE QVariantList directories(QString const& _root);
+	/// path from url
+	Q_INVOKABLE QString pathFromUrl(QString const& _url);
+	/// dir exists
+	Q_INVOKABLE bool dirExists(QString const& _url);
+	/// returns manifest file
+	Q_INVOKABLE Json::Value generateManifest(QString const& _rootPath, QString const& _path);
+
+	//TODO: remove once qt 5.5.1 is out
+	Q_INVOKABLE QString urlToPath(QUrl const& _url) { return _url.toLocalFile(); }
+	Q_INVOKABLE QUrl pathToUrl(QString const& _path) { return QUrl::fromLocalFile(_path); }
+	Q_INVOKABLE QUrl pathFolder(QString const& _path);
+
+private:
+	QString getHomePath() const;
+	QFileSystemWatcher* m_watcher;
+
+	void manageException();
+	QVariantList createSortedList(QString const& _root, QDir::Filter _filter);
+};
+
+}
+}

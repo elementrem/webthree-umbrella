@@ -1,0 +1,12 @@
+aux_source_directory(. SRC_LIST)
+
+set(EXECUTABLE lllc)
+
+file(GLOB HEADERS "*.h")
+include_directories(BEFORE ..)
+ele_simple_add_executable(${EXECUTABLE} ${SRC_LIST} ${HEADERS})
+
+ele_use(${EXECUTABLE} REQUIRED Solidity::lll Dev::buildinfo Solidity::evmasm)
+
+install( TARGETS ${EXECUTABLE} DESTINATION bin )
+
