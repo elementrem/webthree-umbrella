@@ -33,6 +33,8 @@ sudo dpkg -i libcryptopp-dev_5.6.2+0wily-0ubuntu1_amd64.deb
 
 ## Start GPU mining
 
+Method 1
+------------------------
 gele downloads 
 [go-elementrem gele](https://github.com/elementrem/go-elementrem/releases) or [Elementrem mist wallet](https://github.com/elementrem/mist/releases)
 Mist-wallet gele path = `<Elementrem-Wallet Directory>\resources\node\gele`   
@@ -42,10 +44,23 @@ Mist-wallet gele path = `<Elementrem-Wallet Directory>\resources\node\gele`
       Launch `gele --rpc` followed by Elementrem-mist-wallet    
 
 eleminer download [webthree-umbrella](https://github.com/elementrem/webthree-umbrella/releases)
-- Run `eleminer -G` // G option enables the GPU mining.
+- Run `eleminer -G` // G option enables the GPU mining.          
 
+-----------------------
 
+Method 2
+-----------------------       
+- start **Elementrem-mist-Wallet**       
+- open CMD(in windows) , terminal(in linux)       
+     move to your path = `<Elementrem-Wallet Directory>\resources\node\gele`         
+     run `gele attach`        
+- in console mode        
+     run `> web3.admin.startRPC()` // RPC open command in console    
 
+eleminer download [webthree-umbrella](https://github.com/elementrem/webthree-umbrella/releases)          
+- Run `eleminer -G` // G option enables the GPU mining.    
+
+-----------------------
 
 ## GPU mining screenshot
 ![](https://github.com/elementrem/webthree-umbrella/blob/master/img_helper/windows_gpu_mine_1.png?raw=true)
