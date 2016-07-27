@@ -9,17 +9,25 @@ Ubuntu 16.04 does not officially support CUDA, But you can use the `sudo apt ins
 
 -----------------------------------------------------
 
-- If you using Windows os, install the following dependency.
+- **If you using Windows os, install the following dependency.**      
 
-verison | SDK link       
+Software | link       
 --- | ---
-windows 7| https://www.microsoft.com/en-us/download/details.aspx?id=8279         
-windows 8.1|    https://developer.microsoft.com/en-us/windows/downloads/windows-8-1-sdk         
-Windows 10  |   https://dev.windows.com/en-us/downloads/windows-10-sdk      
+C++ Redistributable  | http://www.microsoft.com/en-us/download/details.aspx?id=48145         
+Windows SDK  |   https://dev.windows.com/en-us/downloads/windows-10-sdk      
 
-- If you using Ubuntu os, install the following dependency.            
-`git clone --recursive https://github.com/elementrem/webthree-umbrella`       
-[Ubuntu Pre-requisites click here](ubuntu_dependency.md)       
+- **If you using Ubuntu os, install the following dependency.**               
+```
+git clone https://github.com/elementrem/webthree-umbrella
+cd webthree-umbrella/dependency/ubuntu_16.04
+
+sudo dpkg -i libqt5core5a_5.4.2+dfsg-2ubuntu9_amd64.deb
+sudo dpkg -i libqt5qml5_5.4.2-1ubuntu6_amd64.deb
+sudo dpkg -i libqt5webengine5_5.4.1+1wily-0ubuntu1_amd64.deb
+sudo dpkg -i libqt5webengine5-dev_5.4.1+1wily-0ubuntu1_amd64.deb
+sudo dpkg -i qml-module-qtwebengine_5.4.1+1wily-0ubuntu1_amd64.deb
+sudo dpkg -i libcryptopp-dev_5.6.2+0wily-0ubuntu1_amd64.deb
+```
 
 ------------------------
 
