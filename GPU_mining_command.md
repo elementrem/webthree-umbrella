@@ -50,6 +50,7 @@ eleminer download [webthree-umbrella](https://github.com/elementrem/webthree-umb
 
 Method 2
 -----------------------       
+Get [Elementrem mist wallet](https://github.com/elementrem/mist/releases)
 - start **Elementrem-mist-Wallet**       
 - open CMD(in windows) , terminal(in linux)       
      move to your path = `<Elementrem-Wallet Directory>\resources\node\gele`         
