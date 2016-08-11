@@ -18,12 +18,20 @@ sudo apt-get -y install qml-module-qtquick-controls qml-module-qtquick-privatewi
 sudo apt update		
 sudo apt upgrade		
 
-* Move to path = webthree-umbrella\dependency\ubuntu_16.04    
-sudo dpkg -i libqt5core5a_5.4.2+dfsg-2ubuntu9_amd64.deb   
-sudo dpkg -i libqt5qml5_5.4.2-1ubuntu6_amd64.deb    
-sudo dpkg -i libqt5webengine5_5.4.1+1wily-0ubuntu1_amd64.deb		
-sudo dpkg -i libqt5webengine5-dev_5.4.1+1wily-0ubuntu1_amd64.deb		
-sudo dpkg -i qml-module-qtwebengine_5.4.1+1wily-0ubuntu1_amd64.deb		
+* Move to path = webthree-umbrella\dependency\ubuntu_16.04     
+
+sudo apt-get -y install rpm		
+sudo apt-get -f install		
+sudo apt-get install alien		
+
+sudo dpkg -i libqt5core5a_5.5.1+dfsg-16ubuntu7_amd64.deb		
+sudo dpkg -i libqt5qml5_5.5.1-2ubuntu6_amd64.deb		
+sudo dpkg -i libjpeg62-turbo_1.5.0-1_amd64.deb		
+sudo dpkg -i libqt5webchannel5_5.5.1-59.1_amd64.deb		
+sudo dpkg -i libqt5webengine5_5.5.1-1_amd64.deb		
+sudo dpkg -i qtwebengine5-dev_5.5.1-1_amd64.deb		
+sudo dpkg -i qml-module-qtwebengine_5.5.1-1_amd64.deb		
+
 sudo dpkg -i libcryptopp-dev_5.6.2+0wily-0ubuntu1_amd64.deb		
 sudo dpkg -i libqt5core5a_5.5.1+dfsg-16ubuntu7_amd64.deb		
 sudo dpkg -i libqt5qml5_5.5.1-2ubuntu6_amd64.deb		
