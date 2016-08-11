@@ -21,6 +21,8 @@ git submodule update --recursive
 cd webthree-umbrella
 cmake -P webthree-helpers/deps/install_deps.cmake
 ```
+If `ERROR! Downloading 'qt-5.6.tar.gz' failed.`, Run `cmake -P webthree-helpers/deps/install_deps_qt.cmake`		
+
 [You can also manually install dependency.](https://github.com/elementrem/cpp-dependencies/releases) |
 ------ | ------
 [boost-1.61](https://github.com/elementrem/cpp-dependencies/releases/download/vc140/boost-1.61.tar.gz)  |
@@ -61,6 +63,9 @@ git submodule update --recursive
 cd webthree-umbrella
 cmake -P webthree-helpers/deps/install_deps.cmake
 ```
+If `ERROR! Downloading 'qt-5.6.tar.gz' failed.`, Run `cmake -P webthree-helpers/deps/install_deps_qt.cmake`		
+
+
 [You can also manually install dependency.](https://github.com/elementrem/cpp-dependencies/releases) |
 ------ | ------
 [boost-1.61](https://github.com/elementrem/cpp-dependencies/releases/download/vc140/boost-1.61.tar.gz)  |
