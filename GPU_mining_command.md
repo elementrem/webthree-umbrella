@@ -2,7 +2,7 @@
 
 The algorithm is memory hard and in order to fit the DAG into memory, it needs 1-2GB of RAM on each GPU.    
 The GPU miner is implemented in OpenCL. To get openCL for your chipset and platform as follows:   
-[AMD SDK openCL](http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing-app-sdk/)    
+[AMD SDK openCL](https://developer.amd.com/amd-license-agreement-appsdk/)    
 [NVIDIA CUDA openCL](https://developer.nvidia.com/cuda-downloads)   
 
 Ubuntu 16.04 does not officially support CUDA, But you can use the `sudo apt install nvidia-cuda-dev`
